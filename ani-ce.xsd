@@ -44,4 +44,334 @@
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="ani:richstring.data"/>
         </xs:complexType>
     </xs:element>
+
+         <xs:simpleType name="citationtype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="ab"/>
+            <xs:enumeration value="ar"/>
+            <xs:enumeration value="ba"/>
+            <xs:enumeration value="bk"/>
+            <xs:enumeration value="br"/>
+            <xs:enumeration value="bz"/>
+            <xs:enumeration value="cb"/>
+            <xs:enumeration value="ch"/>
+            <xs:enumeration value="cp"/>
+            <xs:enumeration value="cr"/>
+            <xs:enumeration value="di"/>
+            <xs:enumeration value="dp"><!-- data paper --></xs:enumeration>
+            <xs:enumeration value="ed"/>
+            <xs:enumeration value="er"><!-- erratum --></xs:enumeration>
+            <xs:enumeration value="ip"/>
+            <xs:enumeration value="le"/>
+            <xs:enumeration value="mm"><!-- will only be present in Compendex records, and will indicate that multimedia content is available via a hyperlinked URL --></xs:enumeration>
+            <xs:enumeration value="no"/>
+            <xs:enumeration value="pa"/>
+            <xs:enumeration value="pp"><!--2019-09-23 --></xs:enumeration>
+            <xs:enumeration value="pr"/>
+            <xs:enumeration value="re"/>
+            <xs:enumeration value="rf"/>
+            <xs:enumeration value="rp"/>
+            <xs:enumeration value="sh"/>
+            <xs:enumeration value="st"/>
+            <xs:enumeration value="tb"/>
+            <xs:enumeration value="wp"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="gencitationtype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="ba"><!-- 2019-10-11 Chapter with Book Abstracts --></xs:enumeration>
+            <xs:enumeration value="bk"/>
+            <xs:enumeration value="ch"/>
+            <xs:enumeration value="co"/>
+            <xs:enumeration value="cp"/>
+            <xs:enumeration value="di"/>
+            <xs:enumeration value="ep"/>
+            <xs:enumeration value="ot"/>
+            <xs:enumeration value="pa"/>
+            <xs:enumeration value="st"/>
+            <xs:enumeration value="tr"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ========== Sequencebank types ==========
+    -->
+    <xs:simpleType name="sequencebanktype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="DDBJ"/>
+            <xs:enumeration value="EMBL"/>
+            <xs:enumeration value="GENBANK"/>
+            <xs:enumeration value="PIR"/>
+            <xs:enumeration value="SWISSPROT"/>
+            <xs:enumeration value="UNNAMED"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ========== Descriptor types ==========
+    -->
+    <xs:simpleType name="descriptortype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="AUD"/>
+            <xs:enumeration value="AUT"/>
+            <xs:enumeration value="BLS"/>
+            <xs:enumeration value="BTC"/>
+            <xs:enumeration value="CBA"/>
+            <xs:enumeration value="CBB"/>
+            <xs:enumeration value="CBC"/>
+            <xs:enumeration value="CBE"/>
+            <xs:enumeration value="CCV"/>
+            <xs:enumeration value="CFL"/>
+            <xs:enumeration value="CLU"/>
+            <xs:enumeration value="CMH"/>
+            <xs:enumeration value="CNC"/>
+            <xs:enumeration value="CSL"/>
+            <xs:enumeration value="CSS"/>
+            <xs:enumeration value="CSW"/>
+            <xs:enumeration value="CTB"/>
+            <xs:enumeration value="CTC"/>
+            <xs:enumeration value="CTN"/>
+            <xs:enumeration value="DID"/>
+            <xs:enumeration value="DRA"/>
+            <xs:enumeration value="DRG"/>
+            <xs:enumeration value="ECN"/>
+            <xs:enumeration value="FDE"/>
+            <xs:enumeration value="GDE"/>
+            <xs:enumeration value="GLY"/>
+            <xs:enumeration value="KWD"/>
+            <xs:enumeration value="MDV"/>
+            <xs:enumeration value="MEA"/>
+            <xs:enumeration value="MED"/>
+            <xs:enumeration value="MGS"/>
+            <xs:enumeration value="MKW"/>
+            <xs:enumeration value="MLA"/>
+            <xs:enumeration value="MMS"/>
+            <xs:enumeration value="MSC"/>
+            <xs:enumeration value="MSF"/>
+            <xs:enumeration value="MSH"/>
+            <xs:enumeration value="MUD"/>
+            <xs:enumeration value="OZR"/>
+            <xs:enumeration value="PCV"/>
+            <xs:enumeration value="REA"/>
+            <xs:enumeration value="RGI"/>
+            <xs:enumeration value="SID"/>
+            <xs:enumeration value="SPC"/>
+            <xs:enumeration value="SPO"/>
+            <xs:enumeration value="SUA"/>
+            <xs:enumeration value="TRP"/>
+            <xs:enumeration value="WDE"/>
+            <xs:enumeration value="SCO"/>
+            <xs:enumeration value="SCT"/>
+            <xs:enumeration value="IBT"/>
+            <xs:enumeration value="IGI"/>
+            <xs:enumeration value="SCC"/>
+            <!-- 2019-09-23 -->
+
+            <!-- part of embase.xsd. must be present here otherwise restriction won't work-->
+            <xs:enumeration value="CTA"></xs:enumeration>
+            <xs:enumeration value="MDA"></xs:enumeration>
+            <xs:enumeration value="TRA"></xs:enumeration>
+            <xs:enumeration value="TAM"></xs:enumeration>
+            <xs:enumeration value="TAV"></xs:enumeration>
+            <xs:enumeration value="MAF"></xs:enumeration>
+            <xs:enumeration value="MAV"></xs:enumeration>
+
+            <!-- part of compendex.xsd must be present here otherwise restriction won't work-->
+            <xs:enumeration value="CSX"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ========== Classification types ==========
+    -->
+    <xs:simpleType name="classificationtype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="ASJC"/>
+            <xs:enumeration value="AUTARC-CONFIGURATION"/>
+            <xs:enumeration value="CABSCLASS"/>
+            <xs:enumeration value="CBNBGEO"/>
+            <xs:enumeration value="CBNBSCOPE"/>
+            <xs:enumeration value="CBNBSECTOR"/>
+            <xs:enumeration value="CBNBSIC"/>
+            <xs:enumeration value="CONFIGURATION-VALUE"/>
+            <xs:enumeration value="CPXCLASS"/>
+            <xs:enumeration value="EMCLASS"/>
+            <xs:enumeration value="ESBD"/>
+            <xs:enumeration value="ENCOMPASSCLASS"/>
+            <xs:enumeration value="FLXCLASS"/>
+            <xs:enumeration value="GEOCLASS"/>
+            <xs:enumeration value="PATAUTO"/>
+            <xs:enumeration value="PATENT-FAMILY"/>
+            <xs:enumeration value="PATMANU"/>
+            <xs:enumeration value="REAXYS-PRIORITY"/>
+            <xs:enumeration value="SATURATION"/>
+            <xs:enumeration value="SUBJECT"/>
+            <xs:enumeration value="SUPPORT-INFORMATION"/>
+            <xs:enumeration value="WTACLASS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ========== Tradename types ==========
+    -->
+    <xs:simpleType name="tradenametype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="TNM"/>
+            <xs:enumeration value="TNV"/>
+            <xs:enumeration value="TNW"/>
+            <!-- 2019-10-09 -->
+            <!-- these values are also part of descriptor types above -->            
+            <xs:enumeration value="TAM"/>
+            <xs:enumeration value="TAV"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ========== Manufacturer types ==========
+    -->
+    <xs:simpleType name="manufacturertype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="MNF"/>
+            <xs:enumeration value="MNV"/>
+            <xs:enumeration value="MNW"/>
+            <!-- 2019-10-09 -->            
+            <!-- these values are also part of descriptor types above -->            
+            <xs:enumeration value="MAF"/>
+            <xs:enumeration value="MAV"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ========== Chemical source types ==========
+    -->
+    <xs:simpleType name="chemicalsourcetype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="esbd"/>
+            <xs:enumeration value="nlm"/>
+            <xs:enumeration value="cbnb"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="sourcetype.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="b"/>
+            <xs:enumeration value="d"/>
+            <xs:enumeration value="j"/>
+            <xs:enumeration value="k"/>
+            <xs:enumeration value="m"/>
+            <xs:enumeration value="p"/>
+            <xs:enumeration value="r"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="w"/>
+            <xs:enumeration value="l"/>
+            <!-- 2020-02-24 -->
+            <xs:enumeration value="x"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="contributorrole.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="auth"/>
+            <xs:enumeration value="comp"/>
+            <xs:enumeration value="edit"/>
+            <xs:enumeration value="illu"/>
+            <xs:enumeration value="phot"/>
+            <xs:enumeration value="publ"/>
+            <xs:enumeration value="revi"/>
+            <xs:enumeration value="tran"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="yesno.att">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="y"/>
+            <xs:enumeration value="n"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- complex types -->
+
+    <xs:complexType name="richstringType" mixed="true">
+        <xs:group minOccurs="0" maxOccurs="unbounded" ref="ani:richstring.data"/>
+    </xs:complexType>
+
+    <xs:complexType name="richstringWithMMLType" mixed="true">
+        <xs:group minOccurs="0" maxOccurs="unbounded" ref="ani:richstringWithMML.data"/>
+    </xs:complexType>
+
+    <xs:group name="pubdateType">
+        <xs:sequence>
+            <xs:element ref="ani:year" minOccurs="0"/>
+            <xs:element ref="ani:month" minOccurs="0"/>
+            <xs:element ref="ani:day" minOccurs="0"/>
+            <xs:element ref="ani:date-text" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:element name="year" type="xs:string"/>
+    <xs:element name="month" type="xs:string"/>
+    <xs:element name="day" type="xs:string"/>
+    <xs:element name="date-text" type="xs:string"/>
+
+    <xs:complexType name="personalnameType">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="ce:initials"/>
+            <xs:element ref="ce:indexed-name"/>
+            <xs:choice minOccurs="0">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="ce:degrees"/>
+                    <xs:element ref="ce:surname"/>
+                    <xs:element minOccurs="0" ref="ce:given-name"/>
+                    <xs:element minOccurs="0" ref="ce:suffix"/>
+                    <xs:element minOccurs="0" ref="ce:alt-name"/>
+                    <xs:element minOccurs="0" ref="ce:alias"/>
+                </xs:sequence>
+                <xs:element ref="ani:nametext"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="author-instance-id" type="xs:NMTOKEN"/>
+    </xs:complexType>
+    <xs:element name="nametext" type="xs:string"/>
+
+    <xs:element name="affiliation-id">
+        <xs:complexType>
+            <xs:attribute name="afid" type="xs:positiveInteger"/>
+            <xs:attribute name="dptid" type="xs:positiveInteger" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="affiliationType">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element ref="ce:text"/>
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" ref="ani:organization"/>
+                    <xs:element minOccurs="0" ref="ani:address-part"/>
+                    <xs:choice minOccurs="0">
+                        <xs:element ref="ani:city-group"/>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" ref="ani:city"/>
+                            <xs:element minOccurs="0" ref="ani:state"/>
+                            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ani:postal-code"/>
+                        </xs:sequence>
+                    </xs:choice>
+                    <xs:element minOccurs="0" ref="ce:source-text"/>
+                </xs:sequence>
+            </xs:choice>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ani:affiliation-id"/>
+        </xs:sequence>
+        <xs:attribute name="affiliation-instance-id" type="xs:NMTOKEN"/>
+    </xs:complexType>
+
+    <xs:complexType name="classificationType" mixed="true">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="ani:classification-code"/>
+            <xs:element ref="ani:classification-description"/>
+        </xs:choice>
+        <xs:attribute name="weight">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="-"/>
+                    <xs:enumeration value="?"/>
+                    <xs:enumeration value="+"/>
+                    <xs:enumeration value="++"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+     
 </xs:schema>
